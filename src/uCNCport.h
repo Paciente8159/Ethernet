@@ -54,9 +54,10 @@ extern "C"
 #ifdef __cplusplus
 #include "WCharacter.h"
 #include "WString.h"
+#include "Print.h"
 
 // WMath prototypes
-static long random(long howsmall, long howbig)
+static inline long random(long howsmall, long howbig)
 {
 	if (howsmall >= howbig)
 	{
