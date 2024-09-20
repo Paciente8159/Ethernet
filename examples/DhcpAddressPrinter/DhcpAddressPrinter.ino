@@ -51,7 +51,7 @@ void setup() {
     }
     // no point in carrying on, so do nothing forevermore:
     while (true) {
-      delay(1);
+      cnc_delay_ms(1);
     }
   }
   // print your local IP address:

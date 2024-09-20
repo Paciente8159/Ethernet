@@ -29,16 +29,13 @@ extern "C"
 {
 #endif
 
+	#include "src/cnc.h"
+
 	void yield(void);
 
 	typedef unsigned int word;
 	typedef bool boolean;
 	typedef uint8_t byte;
-
-#define millis mcu_millis
-#define micros mcu_micros
-#define delay cnc_delay_ms
-#define delayMicroseconds mcu_delay_us
 
 	// c opac interface
 	void w5xx_cs_select(void);

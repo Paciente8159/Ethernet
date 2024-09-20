@@ -66,7 +66,7 @@ void setup() {
     if (Ethernet.hardwareStatus() == EthernetNoHardware) {
       Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
       while (true) {
-        delay(1); // do nothing, no point running without Ethernet hardware
+        cnc_delay_ms(1); // do nothing, no point running without Ethernet hardware
       }
     }
     if (Ethernet.linkStatus() == LinkOFF) {
@@ -81,7 +81,7 @@ void setup() {
     Serial.println(Ethernet.localIP());
   }
   // give the Ethernet shield a second to initialize:
-  delay(1000);
+  cnc_delay_ms(1000);
 }
 
 void loop() {
@@ -95,7 +95,7 @@ void loop() {
 
   // if ten seconds have passed since your last connection,
   // then connect again and send data:
-  if (millis() - lastConnectionTime > postingInterval) {
+  if (mcu_millis() - lastConnectionTime > postingInterval) {
     httpRequest();
   }
 
@@ -118,7 +118,7 @@ void httpRequest() {
     client.println();
 
     // note the time that the connection was made:
-    lastConnectionTime = millis();
+    lastConnectionTime = mcu_millis();
   } else {
     // if you couldn't make a connection:
     Serial.println("connection failed");

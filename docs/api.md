@@ -1291,7 +1291,7 @@ void setup()
   Ethernet.begin(mac, ip);
   Serial.begin(9600);
 
-  delay(1000);
+  cnc_delay_ms(1000);
 
   Serial.println("connecting...");
 
@@ -1358,7 +1358,7 @@ void setup()
   Ethernet.begin(mac, ip);
   Serial.begin(9600);
 
-  delay(1000);
+  cnc_delay_ms(1000);
 
   Serial.println("connecting...");
   while(!client){
@@ -1428,7 +1428,7 @@ void setup()
   Ethernet.begin(mac, ip);
   Serial.begin(9600);
   client.connect(server, 80);
-  delay(1000);
+  cnc_delay_ms(1000);
 
   Serial.println("connecting...");
 
@@ -1500,7 +1500,7 @@ void setup()
   Ethernet.begin(mac, ip);
   Serial.begin(9600);
 
-  delay(1000);
+  cnc_delay_ms(1000);
 
   Serial.println("connecting...");
 
@@ -1868,7 +1868,7 @@ void setup()
   Ethernet.begin(mac, ip);
   Serial.begin(9600);
 
-  delay(1000);
+  cnc_delay_ms(1000);
 
   Serial.println("connecting...");
 
@@ -2352,7 +2352,7 @@ void loop() {
     Serial.print("Received packet of size ");
     Serial.println(packetSize);
   }
-  delay(10);
+  cnc_delay_ms(10);
 }
 ```
 

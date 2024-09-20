@@ -63,7 +63,7 @@ void setup() {
     if (Ethernet.hardwareStatus() == EthernetNoHardware) {
       Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
       while (true) {
-        delay(1); // do nothing, no point running without Ethernet hardware
+        cnc_delay_ms(1); // do nothing, no point running without Ethernet hardware
       }
     }
     if (Ethernet.linkStatus() == LinkOFF) {
@@ -76,7 +76,7 @@ void setup() {
     Serial.println(Ethernet.localIP());
   }
   // give the Ethernet shield a second to initialize:
-  delay(1000);
+  cnc_delay_ms(1000);
   Serial.print("connecting to ");
   Serial.print(server);
   Serial.println("...");
@@ -94,7 +94,7 @@ void setup() {
     // if you didn't get a connection to the server:
     Serial.println("connection failed");
   }
-  beginMicros = micros();
+  beginMicros = mcu_micros();
 }
 
 void loop() {
@@ -113,7 +113,7 @@ void loop() {
 
   // if the server's disconnected, stop the client:
   if (!client.connected()) {
-    endMicros = micros();
+    endMicros = mcu_micros();
     Serial.println();
     Serial.println("disconnecting.");
     client.stop();
@@ -130,7 +130,7 @@ void loop() {
 
     // do nothing forevermore:
     while (true) {
-      delay(1);
+      cnc_delay_ms(1);
     }
   }
 }

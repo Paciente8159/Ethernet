@@ -55,7 +55,7 @@ void setup() {
   if (Ethernet.hardwareStatus() == EthernetNoHardware) {
     Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
     while (true) {
-      delay(1); // do nothing, no point running without Ethernet hardware
+      cnc_delay_ms(1); // do nothing, no point running without Ethernet hardware
     }
   }
   if (Ethernet.linkStatus() == LinkOFF) {
@@ -114,7 +114,7 @@ void loop() {
       }
     }
     // give the web browser time to receive the data
-    delay(1);
+    cnc_delay_ms(1);
     // close the connection:
     client.stop();
     Serial.println("client disconnected");

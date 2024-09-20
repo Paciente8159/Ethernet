@@ -58,16 +58,16 @@ void setup() {
   if (Ethernet.hardwareStatus() == EthernetNoHardware) {
     Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
     while (true) {
-      delay(1); // do nothing, no point running without Ethernet hardware
+      cnc_delay_ms(1); // do nothing, no point running without Ethernet hardware
     }
   }
   while (Ethernet.linkStatus() == LinkOFF) {
     Serial.println("Ethernet cable is not connected.");
-    delay(500);
+    cnc_delay_ms(500);
   }
 
   // give the Ethernet shield a second to initialize:
-  delay(1000);
+  cnc_delay_ms(1000);
   Serial.println("connecting...");
 
   // if you get a connection, report back via serial:
@@ -103,7 +103,7 @@ void loop() {
     client.stop();
     // do nothing:
     while (true) {
-      delay(1);
+      cnc_delay_ms(1);
     }
   }
 }

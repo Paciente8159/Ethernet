@@ -64,7 +64,7 @@ void setup() {
     }
     // no point in carrying on, so do nothing forevermore:
     while (true) {
-      delay(1);
+      cnc_delay_ms(1);
     }
   }
   Udp.begin(localPort);
@@ -74,7 +74,7 @@ void loop() {
   sendNTPpacket(timeServer); // send an NTP packet to a time server
 
   // wait to see if a reply is available
-  delay(1000);
+  cnc_delay_ms(1000);
   if (Udp.parsePacket()) {
     // We've received a packet, read the data from it
     Udp.read(packetBuffer, NTP_PACKET_SIZE); // read the packet into the buffer
@@ -117,7 +117,7 @@ void loop() {
     Serial.println(epoch % 60); // print the second
   }
   // wait ten seconds before asking for the time again
-  delay(10000);
+  cnc_delay_ms(10000);
   Ethernet.maintain();
 }
 

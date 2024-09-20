@@ -82,7 +82,7 @@ void setup() {
   if (Ethernet.hardwareStatus() == EthernetNoHardware) {
     Serial.println("Ethernet shield was not found.  Sorry, can't run without hardware. :(");
     while (true) {
-      delay(1); // do nothing, no point running without Ethernet hardware
+      cnc_delay_ms(1); // do nothing, no point running without Ethernet hardware
     }
   }
   if (Ethernet.linkStatus() == LinkOFF) {
@@ -102,7 +102,7 @@ void setup() {
   writeRegister(0x03, 0x02);
 
   // give the sensor and Ethernet shield time to set up:
-  delay(1000);
+  cnc_delay_ms(1000);
 
   //Set the sensor to high resolution mode to start readings:
   writeRegister(0x03, 0x0A);
@@ -111,13 +111,13 @@ void setup() {
 
 void loop() {
   // check for a reading no more than once a second.
-  if (millis() - lastReadingTime > 1000) {
+  if (mcu_millis() - lastReadingTime > 1000) {
     // if there's a reading ready, read it:
     // don't do anything until the data ready pin is high:
     if (digitalRead(dataReadyPin) == HIGH) {
       getData();
       // timestamp the last time you got a reading:
-      lastReadingTime = millis();
+      lastReadingTime = mcu_millis();
     }
   }
 
@@ -188,7 +188,7 @@ void listenForEthernetClients() {
       }
     }
     // give the web browser time to receive the data
-    delay(1);
+    cnc_delay_ms(1);
     // close the connection:
     client.stop();
   }

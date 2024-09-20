@@ -40,5 +40,5 @@ void loop() {
       Serial.println("OFF");
       break;
   }
-  delay(1000);
+  cnc_delay_ms(1000);
 }
