@@ -19,11 +19,11 @@
 #ifndef uCNCport_h
 #define uCNCport_h
 
-#include <stdlib.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <string.h>
-#include <math.h>
+#include "stdlib.h"
+#include "stdint.h"
+#include "stdbool.h"
+#include "string.h"
+#include "math.h"
 #ifdef __cplusplus
 extern "C"
 {

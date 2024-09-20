@@ -35,8 +35,8 @@ Ethernet.begin(mac, ip, dns, gateway, subnet);
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 // the media access control (ethernet hardware) address for the shield:
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };  
@@ -74,8 +74,8 @@ none
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -118,8 +118,8 @@ none
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -169,8 +169,8 @@ EthernetW5500
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -224,8 +224,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -267,8 +267,8 @@ none
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 void setup() {
   // Open serial communications and wait for port to open:
@@ -314,8 +314,8 @@ none
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 // Enter a MAC address for your controller below.
 // Newer Ethernet shields have a MAC address printed on a sticker on the shield
@@ -370,8 +370,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -457,8 +457,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -496,8 +496,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -536,8 +536,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -574,8 +574,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -612,8 +612,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -649,8 +649,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -686,8 +686,8 @@ Nothing
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -727,8 +727,8 @@ none
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -773,8 +773,8 @@ None
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 // network configuration. dns server, gateway and subnet are optional.
 
@@ -835,8 +835,8 @@ None
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 // network configuration.  gateway and subnet are optional.
 
@@ -896,8 +896,8 @@ None
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 // the media access control (ethernet hardware) address for the shield:
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };  
@@ -959,8 +959,8 @@ none
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(192, 168, 69, 104);
@@ -1039,8 +1039,8 @@ None
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 // the media access control (ethernet hardware) address for the shield:
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };  
@@ -1098,8 +1098,8 @@ none
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -1160,8 +1160,8 @@ server.write(buf, len)
 #### Example
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 // network configuration.  gateway and subnet are optional.
 
@@ -1276,8 +1276,8 @@ None
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
@@ -1343,8 +1343,8 @@ none
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
@@ -1414,8 +1414,8 @@ none
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 byte ip[] = { 10, 0, 0, 177 };
@@ -1486,8 +1486,8 @@ client.connect(servername, port)
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 byte ip[] = { 10, 0, 0, 177 };
@@ -1553,8 +1553,8 @@ none
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -1610,8 +1610,8 @@ none
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -1667,8 +1667,8 @@ none
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -1724,8 +1724,8 @@ Nothing
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(10, 0, 0, 177);
@@ -1854,8 +1854,8 @@ none
 #### Example
 
 ```
-#include <Ethernet.h>
-#include <SPI.h>
+#include "Ethernet.h"
+#include "SPI.h"
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 byte ip[] = { 10, 0, 0, 177 };
@@ -1983,11 +1983,11 @@ EthernetUDP.begin(localPort);
 
 ```
 
-#include <SPI.h>        
+#include "SPI.h"        
 
-#include <Ethernet.h>
+#include "Ethernet.h"
 
-#include <EthernetUdp.h>
+#include "EthernetUdp.h"
 
 
 
@@ -2058,9 +2058,9 @@ EthernetUDP.read(packetBuffer, MaxSize);
 #### Example
 
 ```
-#include <SPI.h>        
-#include <Ethernet.h>
-#include <EthernetUdp.h>
+#include "SPI.h"        
+#include "Ethernet.h"
+#include "EthernetUdp.h"
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
@@ -2141,11 +2141,11 @@ EthernetUDP.write(buffer, size);
  
 
   
-#include <SPI.h>        
+#include "SPI.h"        
 
-#include <Ethernet.h>
+#include "Ethernet.h"
 
-#include <EthernetUdp.h>
+#include "EthernetUdp.h"
 
 
 
@@ -2215,9 +2215,9 @@ EthernetUDP.beginPacket(remoteIP, remotePort);
 #### Example
 
 ```
-#include <SPI.h>        
-#include <Ethernet.h>
-#include <EthernetUdp.h>
+#include "SPI.h"        
+#include "Ethernet.h"
+#include "EthernetUdp.h"
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
@@ -2267,9 +2267,9 @@ None
 #### Example
 
 ```
-#include <SPI.h>        
-#include <Ethernet.h>
-#include <EthernetUdp.h>
+#include "SPI.h"        
+#include "Ethernet.h"
+#include "EthernetUdp.h"
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
@@ -2320,9 +2320,9 @@ None
 
 ```
 
-#include <SPI.h>         // needed for Arduino versions later than 0018
-#include <Ethernet.h>
-#include <EthernetUdp.h>         // UDP library from: bjoern@cs.stanford.edu 12/30/2008
+#include "SPI.h"         // needed for Arduino versions later than 0018
+#include "Ethernet.h"
+#include "EthernetUdp.h"         // UDP library from: bjoern@cs.stanford.edu 12/30/2008
 
 
 // Enter a MAC address and IP address for your controller below.
@@ -2383,9 +2383,9 @@ None
 #### Example
 
 ```
-#include <SPI.h>        
-#include <Ethernet.h>
-#include <EthernetUdp.h>
+#include "SPI.h"        
+#include "Ethernet.h"
+#include "EthernetUdp.h"
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
@@ -2481,9 +2481,9 @@ None
 
 ```
 
-#include <SPI.h>        
-#include <Ethernet.h>
-#include <EthernetUdp.h>
+#include "SPI.h"        
+#include "Ethernet.h"
+#include "EthernetUdp.h"
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:
@@ -2548,9 +2548,9 @@ None
 #### Example
 
 ```
-#include <SPI.h>        
-#include <Ethernet.h>
-#include <EthernetUdp.h>
+#include "SPI.h"        
+#include "Ethernet.h"
+#include "EthernetUdp.h"
 
 // Enter a MAC address and IP address for your controller below.
 // The IP address will be dependent on your local network:

@@ -23,9 +23,9 @@
 #define String_class_h
 #ifdef __cplusplus
 
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include "stdlib.h"
+#include "string.h"
+#include "ctype.h"
 #if !defined(ARDUINO_ARCH_AVR) && !defined(__AVR__)
 #define strlen_P strlen
 #define strcpy_P strcpy

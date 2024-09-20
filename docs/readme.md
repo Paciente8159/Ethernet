@@ -11,6 +11,6 @@ The Arduino board communicates with the shield using the SPI bus. This is on dig
 To use this library
 
 ```
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 ```

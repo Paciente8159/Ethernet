@@ -22,7 +22,7 @@
 #ifndef Stream_h
 #define Stream_h
 
-#include <inttypes.h>
+#include "inttypes.h"
 #include "Print.h"
 
 // compatibility macros for testing

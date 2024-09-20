@@ -11,8 +11,8 @@
   This example is public domain.
 */
 
-#include <SPI.h>
-#include <Ethernet.h>
+#include "SPI.h"
+#include "Ethernet.h"
 
 void setup() {
   // You can use Ethernet.init(pin) to configure the CS pin

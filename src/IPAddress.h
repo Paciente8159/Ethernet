@@ -20,7 +20,7 @@
 #ifndef IPAddress_h
 #define IPAddress_h
 
-#include <stdint.h>
+#include "stdint.h"
 #include "Printable.h"
 #include "WString.h"
 
