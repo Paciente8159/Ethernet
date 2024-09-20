@@ -304,10 +304,10 @@ private:
 	inline static void initSS() {
 	}
 	inline static void setSS() {
-		w5xx_cs_select();
+		w5xxx_cs_select();
 	}
 	inline static void resetSS() {
-		w5xx_cs_deselect();
+		w5xxx_cs_deselect();
 	}
 };
 

@@ -38,13 +38,13 @@ extern "C"
 	typedef uint8_t byte;
 
 	// c opac interface
-	void w5xx_cs_select(void);
-	void w5xx_cs_deselect(void);
-	void w5xx_spi_config(void);
-	void w5xx_spi_start(void);
-	void w5xx_spi_end(void);
-	uint8_t w5xx_spi_xmit(uint8_t c);
-	void w5xx_spi_bulk_xmit(const uint8_t *out, uint8_t *in, uint16_t len);
+	void w5xxx_cs_select(void);
+	void w5xxx_cs_deselect(void);
+	void w5xxx_spi_config(void);
+	void w5xxx_spi_start(void);
+	void w5xxx_spi_end(void);
+	uint8_t w5xxx_spi_xmit(uint8_t c);
+	void w5xxx_spi_bulk_xmit(const uint8_t *out, uint8_t *in, uint16_t len);
 	
 
 #ifdef __cplusplus

@@ -56,10 +56,10 @@ uint8_t W5100Class::init(void)
 	cnc_delay_ms(560);
 	//Serial.println("w5100 init");
 
-	w5xx_spi_config();
+	w5xxx_spi_config();
 	initSS();
 	resetSS();
-	w5xx_spi_start();
+	w5xxx_spi_start();
 
 	// Attempt W5200 detection first, because W5200 does not properly
 	// reset its SPI state when CS goes high (inactive).  Communication
@@ -144,10 +144,10 @@ uint8_t W5100Class::init(void)
 	} else {
 		//Serial.println("no chip :-(");
 		chip = 0;
-		w5xx_spi_end();
+		w5xxx_spi_end();
 		return 0; // no known chip is responding :-(
 	}
-	w5xx_spi_end();
+	w5xxx_spi_end();
 	initialized = true;
 	return 1; // successful init
 }
@@ -231,15 +231,15 @@ W5100Linkstatus W5100Class::getLinkStatus()
 	if (!init()) return UNKNOWN;
 	switch (chip) {
 	  case 52:
-		w5xx_spi_start();
+		w5xxx_spi_start();
 		phystatus = readPSTATUS_W5200();
-		w5xx_spi_end();
+		w5xxx_spi_end();
 		if (phystatus & 0x20) return LINK_ON;
 		return LINK_OFF;
 	  case 55:
-		w5xx_spi_start();
+		w5xxx_spi_start();
 		phystatus = readPHYCFGR_W5500();
-		w5xx_spi_end();
+		w5xxx_spi_end();
 		if (phystatus & 0x01) return LINK_ON;
 		return LINK_OFF;
 	  default:
@@ -254,11 +254,11 @@ uint16_t W5100Class::write(uint16_t addr, const uint8_t *buf, uint16_t len)
 	if (chip == 51) {
 		for (uint16_t i=0; i<len; i++) {
 			setSS();
-			w5xx_spi_xmit(0xF0);
-			w5xx_spi_xmit(addr >> 8);
-			w5xx_spi_xmit(addr & 0xFF);
+			w5xxx_spi_xmit(0xF0);
+			w5xxx_spi_xmit(addr >> 8);
+			w5xxx_spi_xmit(addr & 0xFF);
 			addr++;
-			w5xx_spi_xmit(buf[i]);
+			w5xxx_spi_xmit(buf[i]);
 			resetSS();
 		}
 	} else if (chip == 52) {
@@ -267,8 +267,8 @@ uint16_t W5100Class::write(uint16_t addr, const uint8_t *buf, uint16_t len)
 		cmd[1] = addr & 0xFF;
 		cmd[2] = ((len >> 8) & 0x7F) | 0x80;
 		cmd[3] = len & 0xFF;
-		w5xx_spi_bulk_xmit(cmd, NULL, 4);
-		w5xx_spi_bulk_xmit(buf, NULL, len);
+		w5xxx_spi_bulk_xmit(cmd, NULL, 4);
+		w5xxx_spi_bulk_xmit(buf, NULL, len);
 		resetSS();
 	} else { // chip == 55
 		setSS();
@@ -314,10 +314,10 @@ uint16_t W5100Class::write(uint16_t addr, const uint8_t *buf, uint16_t len)
 			for (uint8_t i=0; i < len; i++) {
 				cmd[i + 3] = buf[i];
 			}
-			w5xx_spi_bulk_xmit(cmd, NULL, len + 3);
+			w5xxx_spi_bulk_xmit(cmd, NULL, len + 3);
 		} else {
-			w5xx_spi_bulk_xmit(cmd, NULL, 3);
-			w5xx_spi_bulk_xmit(buf, NULL, len);
+			w5xxx_spi_bulk_xmit(cmd, NULL, 3);
+			w5xxx_spi_bulk_xmit(buf, NULL, len);
 		}
 		resetSS();
 	}
@@ -332,17 +332,17 @@ uint16_t W5100Class::read(uint16_t addr, uint8_t *buf, uint16_t len)
 		for (uint16_t i=0; i < len; i++) {
 			setSS();
 			#if 1
-			w5xx_spi_xmit(0x0F);
-			w5xx_spi_xmit(addr >> 8);
-			w5xx_spi_xmit(addr & 0xFF);
+			w5xxx_spi_xmit(0x0F);
+			w5xxx_spi_xmit(addr >> 8);
+			w5xxx_spi_xmit(addr & 0xFF);
 			addr++;
-			buf[i] = w5xx_spi_xmit(0);
+			buf[i] = w5xxx_spi_xmit(0);
 			#else
 			cmd[0] = 0x0F;
 			cmd[1] = addr >> 8;
 			cmd[2] = addr & 0xFF;
 			cmd[3] = 0;
-			w5xx_spi_xmit(cmd, 4); // TODO: why doesn't this work?
+			w5xxx_spi_xmit(cmd, 4); // TODO: why doesn't this work?
 			buf[i] = cmd[3];
 			addr++;
 			#endif
@@ -354,9 +354,9 @@ uint16_t W5100Class::read(uint16_t addr, uint8_t *buf, uint16_t len)
 		cmd[1] = addr & 0xFF;
 		cmd[2] = (len >> 8) & 0x7F;
 		cmd[3] = len & 0xFF;
-		w5xx_spi_bulk_xmit(cmd, NULL, 4);
+		w5xxx_spi_bulk_xmit(cmd, NULL, 4);
 		memset(buf, 0, len);
-		w5xx_spi_bulk_xmit(buf, NULL, len);
+		w5xxx_spi_bulk_xmit(buf, buf, len);
 		resetSS();
 	} else { // chip == 55
 		setSS();
@@ -398,9 +398,9 @@ uint16_t W5100Class::read(uint16_t addr, uint8_t *buf, uint16_t len)
 			cmd[2] = ((addr >> 6) & 0xE0) | 0x18; // 2K buffers
 			#endif
 		}
-		w5xx_spi_bulk_xmit(cmd, NULL, 3);
+		w5xxx_spi_bulk_xmit(cmd, NULL, 3);
 		memset(buf, 0, len);
-		w5xx_spi_bulk_xmit(buf, NULL, len);
+		w5xxx_spi_bulk_xmit(buf, buf, len);
 		resetSS();
 	}
 	return len;
