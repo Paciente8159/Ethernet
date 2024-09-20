@@ -18,7 +18,7 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <Arduino.h>
+#include "uCNCport.h"
 #include "Ethernet.h"
 #include "utility/w5100.h"
 

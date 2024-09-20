@@ -26,7 +26,7 @@
  * bjoern@cs.stanford.edu 12/30/2008
  */
 
-#include <Arduino.h>
+#include "uCNCport.h"
 #include "Ethernet.h"
 #include "Dns.h"
 #include "utility/w5100.h"

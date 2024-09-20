@@ -48,7 +48,7 @@
 //#define ETHERNET_LARGE_BUFFERS
 
 
-#include <Arduino.h>
+#include "uCNCport.h"
 #include "Client.h"
 #include "Server.h"
 #include "Udp.h"
