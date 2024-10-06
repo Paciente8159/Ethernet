@@ -29,7 +29,7 @@ extern "C"
 {
 #endif
 
-	#include "src/cnc.h"
+#include "src/cnc.h"
 
 	void yield(void);
 
@@ -45,11 +45,12 @@ extern "C"
 	void w5xxx_spi_end(void);
 	uint8_t w5xxx_spi_xmit(uint8_t c);
 	void w5xxx_spi_bulk_xmit(const uint8_t *out, uint8_t *in, uint16_t len);
-	
 
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
+#ifndef ARDUINO
 
 #ifdef __cplusplus
 #include "WCharacter.h"
@@ -73,4 +74,5 @@ static inline long random(long howsmall, long howbig)
 
 #endif
 
+#endif
 #endif

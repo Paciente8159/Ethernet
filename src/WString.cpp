@@ -19,6 +19,8 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#ifndef ARDUINO
+
 #include "WString.h"
 
 /*********************************************/
@@ -748,3 +750,5 @@ double String::toDouble(void) const
 	if (buffer) return atof(buffer);
 	return 0;
 }
+
+#endif

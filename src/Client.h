@@ -17,6 +17,8 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#ifndef ARDUINO
+
 #ifndef client_h
 #define client_h
 #include "Print.h"
@@ -42,4 +44,5 @@ protected:
   uint8_t* rawIPAddress(IPAddress& addr) { return addr.raw_address(); };
 };
 
+#endif
 #endif

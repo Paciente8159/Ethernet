@@ -32,6 +32,8 @@
  * bjoern@cs.stanford.edu 12/30/2008
  */
 
+#ifndef ARDUINO
+
 #ifndef udp_h
 #define udp_h
 
@@ -86,4 +88,5 @@ protected:
   uint8_t* rawIPAddress(IPAddress& addr) { return addr.raw_address(); };
 };
 
+#endif
 #endif

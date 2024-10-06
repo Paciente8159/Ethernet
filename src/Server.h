@@ -17,6 +17,8 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#ifndef ARDUINO
+
 #ifndef server_h
 #define server_h
 
@@ -27,4 +29,5 @@ public:
   virtual void begin() =0;
 };
 
+#endif
 #endif

@@ -20,6 +20,8 @@
  Modified 03 August 2015 by Chuck Todd
  */
 
+#ifndef ARDUINO
+
 #include "stdlib.h"
 #include "stdio.h"
 #include "string.h"
@@ -264,3 +266,5 @@ size_t Print::printFloat(double number, uint8_t digits)
   
   return n;
 }
+
+#endif
